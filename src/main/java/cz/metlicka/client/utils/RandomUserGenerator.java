@@ -12,7 +12,10 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RandomUserGenerator {
 
     private static final List<String> firstNames = List.of("Caliyah", "Mireya", "Eidan", "Ollie", "Zooey", "Holdyn", "Alizee", "Auria", "Stormi", "Nechama");
+    private static final List<String> middleNames = List.of("Caliyah", "Mireya", "Eidan", "Ollie", "Zooey", "Holdyn", "Alizee", "Auria", "Stormi", "Nechama");
     private static final List<String> lastNames = List.of("Mounts", "Shim", "Bolanos", "Branham", "Herrmann", "Lund", "Orosco", "Brill", "Earle", "George");
+    private static final List<String> emails = List.of("cremonini@live.com", "thassine@yahoo.com", "wsnyder@live.com", "mstrout@optonline.net", "burniske@icloud.com", "jespley@yahoo.ca", "cameron@mac.com", "sabren@optonline.net",
+            "weazelman@verizon.net", "seemant@verizon.net", "tbusch@verizon.net", "offthelip@yahoo.ca");
     private static final List<String> streets = List.of("Milne Field", "Lammas Furlong", "Carnegie Drive", "Rushden Croft", "Lammas Oval", "Christchurch Gait", "St Marys Glas", "Albert Hall Place", "Albert Drive", "Belyars Lane");
     private static final List<String> cities = List.of("Milan", "Luanda", "Bangalore", "Rio de Janeiro", "Moscow", "São Paulo", "Kuala Lumpur", "Dhaka", "Sofia", "Kyiv");
     private static final List<String> states = List.of("Utah", "Hawaii", "Colorado", "Kansas", "Nebraska", "Vermont", "Michigan", "Alabama", "Louisiana", "Montana");
@@ -21,7 +24,9 @@ public class RandomUserGenerator {
     public static UserCreateRequest prepareRandomUser() {
         UserCreateRequest userCreateRequest = new UserCreateRequest();
         userCreateRequest.firstName(getRandomFromList(firstNames));
+        userCreateRequest.middleName(getRandomFromList(middleNames));
         userCreateRequest.lastName(getRandomFromList(lastNames));
+        userCreateRequest.email(getRandomFromList(emails));
 
         Address address = new Address();
         address.street(getRandomFromList(streets));
@@ -34,6 +39,6 @@ public class RandomUserGenerator {
     }
 
     private static String getRandomFromList(List<String> list) {
-        return list.get(ThreadLocalRandom.current().nextInt(0, firstNames.size()));
+        return list.get(ThreadLocalRandom.current().nextInt(0, list.size()));
     }
 }

@@ -3,6 +3,7 @@ package {{package}};
 import org.springframework.cloud.openfeign.FeignClient;
 import {{configPackage}}.ClientConfiguration;
 
+@org.springframework.validation.annotation.Validated
 @FeignClient(name="${{openbrace}}{{classVarName}}.name:{{classVarName}}{{closebrace}}", {{#useFeignClientUrl}}url="${{openbrace}}{{classVarName}}.url:{{basePath}}{{closebrace}}", {{/useFeignClientUrl}}configuration = ClientConfiguration.class)
 public interface {{classname}}Client extends {{classname}} {
 }

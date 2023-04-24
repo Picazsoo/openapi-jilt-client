@@ -34,7 +34,7 @@ public class RandomUserGenerator {
                 .firstName(getRandomFromList(firstNames))
                 .middleName(getRandomFromList(middleNames))
                 .lastName(getRandomFromList(lastNames))
-//                .email(getRandomFromList(emails))
+                .email(getRandomFromList(emails))
                 .build();
     }
 

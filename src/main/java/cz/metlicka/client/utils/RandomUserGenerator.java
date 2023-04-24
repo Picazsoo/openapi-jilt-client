@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RandomUserGenerator {
 
     private static final List<String> firstNames = List.of("Caliyah", "Mireya", "Eidan", "Ollie", "Zooey", "Holdyn", "Alizee", "Auria", "Stormi", "Nechama");
-    private static final List<String> middleNames = List.of("<-Name-too-long-to-validate-----51-characters----->","Caliyah", "Mireya");
+    private static final List<String> middleNames = List.of("Caliyah", "Mireya", "Eidan", "Ollie", "Zooey", "Holdyn", "Alizee", "Auria", "Stormi", "Nechama");
     private static final List<String> lastNames = List.of("Mounts", "Shim", "Bolanos", "Branham", "Herrmann", "Lund", "Orosco", "Brill", "Earle", "George");
     private static final List<String> emails = List.of("cremonini@live.com", "thassine@yahoo.com", "wsnyder@live.com", "mstrout@optonline.net", "burniske@icloud.com", "jespley@yahoo.ca", "cameron@mac.com", "sabren@optonline.net",
             "weazelman@verizon.net", "seemant@verizon.net", "tbusch@verizon.net", "offthelip@yahoo.ca");

@@ -34,6 +34,7 @@ dependencies {
 	implementation("javax.validation:validation-api:2.0.1.Final")
 	implementation("org.mapstruct:mapstruct:1.5.4.Final")
 	implementation("org.openapitools:jackson-databind-nullable:0.2.1")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

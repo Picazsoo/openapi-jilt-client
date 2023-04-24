@@ -22,8 +22,10 @@ repositories {
 extra["springCloudVersion"] = "2021.0.6"
 
 dependencies {
+	annotationProcessor("cc.jilt:jilt:1.2")
 	annotationProcessor("org.projectlombok:lombok")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+	compileOnly("cc.jilt:jilt:1.2")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	implementation("io.github.openfeign:feign-jackson:12.3")
@@ -59,8 +61,12 @@ openApiGenerate {
 	configOptions.set(mapOf(
 			"dateLibrary" to "java8",
 			"library" to "spring-cloud",
+			"additionalModelTypeAnnotations" to """
+                @lombok.AllArgsConstructor
+                @org.jilt.Builder(style = org.jilt.BuilderStyle.TYPE_SAFE_UNGROUPED_OPTIONALS)""".trimIndent(),
 	))
 	ignoreFileOverride.set("$rootDir/.openapi-generator-ignore")
+
 }
 
 sourceSets {

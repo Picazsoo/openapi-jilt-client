@@ -1,7 +1,8 @@
 package cz.metlicka.client.utils;
 
-import cz.metlicka.client.model.Address;
+import cz.metlicka.client.model.AddressBuilder;
 import cz.metlicka.client.model.UserCreateRequest;
+import cz.metlicka.client.model.UserCreateRequestBuilder;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 
@@ -19,18 +20,17 @@ public class RandomUserGenerator {
     private static final List<String> zips = List.of("10581", "15150-7897", "13888", "53675-1889", "33820", "93554-8871", "41555-2148", "53307-2352", "38338", "51647");
 
     public static UserCreateRequest prepareRandomUser() {
-        UserCreateRequest userCreateRequest = new UserCreateRequest();
-        userCreateRequest.firstName(getRandomFromList(firstNames));
-        userCreateRequest.lastName(getRandomFromList(lastNames));
-
-        Address address = new Address();
-        address.street(getRandomFromList(streets));
-        address.city(getRandomFromList(cities));
-        address.state(getRandomFromList(states));
-        address.zip(getRandomFromList(zips));
-        userCreateRequest.address(address);
-
-        return userCreateRequest;
+        return UserCreateRequestBuilder.userCreateRequest()
+                .address(AddressBuilder.address()
+                        .street(getRandomFromList(streets))
+                        .city(getRandomFromList(cities))
+                        .state(getRandomFromList(states))
+                        .zip(getRandomFromList(zips))
+                        .build()
+                )
+                .firstName(getRandomFromList(firstNames))
+                .lastName(getRandomFromList(lastNames))
+                .build();
     }
 
     private static String getRandomFromList(List<String> list) {

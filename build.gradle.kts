@@ -66,6 +66,7 @@ openApiGenerate {
                 @org.jilt.Builder(style = org.jilt.BuilderStyle.TYPE_SAFE_UNGROUPED_OPTIONALS)""".trimIndent(),
 	))
 	ignoreFileOverride.set("$rootDir/.openapi-generator-ignore")
+	templateDir.set("$rootDir/templates")
 
 }
 

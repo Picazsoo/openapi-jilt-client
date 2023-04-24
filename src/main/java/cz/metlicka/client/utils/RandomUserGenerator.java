@@ -24,17 +24,17 @@ public class RandomUserGenerator {
 
     public static UserCreateRequest prepareRandomUser() {
         return UserCreateRequestBuilder.userCreateRequest()
-                .address(AddressBuilder.address()
-                        .street(getRandomFromList(streets))
-                        .city(getRandomFromList(cities))
-                        .state(getRandomFromList(states))
-                        .zip(getRandomFromList(zips))
-                        .build()
-                )
+//                .address(AddressBuilder.address()
+//                        .street(getRandomFromList(streets))
+//                        .city(getRandomFromList(cities))
+//                        .state(getRandomFromList(states))
+//                        .zip(getRandomFromList(zips))
+//                        .build()
+//                )
                 .firstName(getRandomFromList(firstNames))
-                .middleName(getRandomFromList(middleNames))
+//                .middleName(getRandomFromList(middleNames))
                 .lastName(getRandomFromList(lastNames))
-                .email(getRandomFromList(emails))
+//                .email(getRandomFromList(emails))
                 .build();
     }
 
